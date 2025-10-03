@@ -8,7 +8,7 @@ __A:__ Yes you can extract the world-view matrix from a World-View-Projection ma
 Here is an example app that displays two cubes like BZTuts 10. I have stored an archive of the original webpage in case it ever goes down: [BzTuts10_archive.7z](https://github.com/ryan-de-boer/WVP/raw/refs/heads/main/archive/BzTuts10_archive.7z)
 ![BZ Tuts 10](images/BZTuts10_example.jpg)
 
-Here is showing PIX displaying the second cubes WVP matrix (row major). PIX (or renderdoc) is useful to understand the WVP matrix if you app supports it.
+Here is showing PIX displaying the second cubes WVP matrix (row major). PIX (or renderdoc) is useful to understand the WVP matrix if your app supports it.
 ![PIX](images/PIX.jpg)
 
 Here is showing exported the geometry using just local coordinates (no transform). Both cubes are on top of each other at the origin. If you don't have much geometry you could manually move them in place - eg a tree might just have 2 meshes one for the trunk, one for the leaves. But if your working on a car game, its possible the car has 100 meshes - too many to manually place.
