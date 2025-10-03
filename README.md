@@ -20,7 +20,7 @@ Here is showing the distortion that takes place if you use the WVP matrix. The t
 Here is a python script that shows how to do a coarse search and a refined search using Nelder-Mead to come up with the parameters for the projection matrix. It is done for DirectX, and has comments for how you might change it for OpenGL.
 [refine_bz.py](https://github.com/ryan-de-boer/WVP/raw/refs/heads/main/python/refine_bz.py)
 
-Here we setup the cube we are going to see if it stays 1x1x1 after tranforming.
+Here we setup the cube we are going to see if it stays 1x1x1 after transforming.
 ```
 import numpy as np
 from scipy.optimize import minimize
