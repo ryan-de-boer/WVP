@@ -139,16 +139,22 @@ print("Refined: fov=%.6f, near=%.6f, far=%.6f, err=%.12f" %
 ```
 
 It came up with:  
+```
 Coarse guess: fov=44.00, near=0.100, far=10000.0, err=0.002176  
 Refined: fov=45.171178, near=0.099151, far=10000.000000, err=0.000002043851
-
+```
 Then you just need to do WVP*P^-1 and you have the WV matrix!
 
 How well did we do? Since we have the source code to BZ Tuts 10 we can look at how the projection matrix is created:   
-XMMatrixPerspectiveFovLH(45.0f*(3.14f/180.0f), (float)Width / (float)Height, 0.1f, 1000.0f);  
+```
+XMMatrixPerspectiveFovLH(45.0f*(3.14f/180.0f), (float)Width / (float)Height, 0.1f, 1000.0f);
+```
 So we were pretty close guessing 45.17 for 45 and almost exact for near. Far is way off but it doesn't affect skewness. Ultimately we just want to remove distortion, so its OK if the projection matrix is not exactly the same as the app uses.
 
 This is the result of exporting the scene using our estimated WV matrix. You can see the cubes are not distorted - yey.
 ![WV transform](images/wv.jpg)
 
 Thanks to ChatGPT for assisting me turn the idea into reality.
+
+See the stack overflow question here, where you can comment and discuss better solutions:
+[Stack Overflow](https://stackoverflow.com/questions/79781656/can-you-extract-a-world-or-world-view-matrix-from-a-world-view-projection-wvp/79781657#79781657)
